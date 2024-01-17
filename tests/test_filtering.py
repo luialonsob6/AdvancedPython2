@@ -3,7 +3,7 @@ Testing the functions
 """
 import unittest
 import pandas as pd
-from ..scripts.homework import Filter_data
+from ..scripts.homework import Filterdata
 
 
 class TestFilterData(unittest.TestCase):
@@ -20,7 +20,7 @@ class TestFilterData(unittest.TestCase):
             "Gross": [100, 200, 150, 300],
         }
         self.df = pd.DataFrame(data)
-        self.filter_data = Filter_data(self.df)
+        self.filter_data = Filterdata(self.df)
 
     def test_filter_genre(self):
         """

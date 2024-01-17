@@ -6,7 +6,7 @@ import pandas as pd
 import click
 
 
-class Filter_data:
+class Filterdata:
     """
     Define class with filter functions
     """
@@ -35,25 +35,25 @@ class Filter_data:
 
 
 @click.command(short_help="parser to import dataset")
-@click.option("-i", "--input", required=True, help="Path to my Input Dataset")
+@click.option("-i", "--insert", required=True, help="Path to my Input Dataset")
 @click.option("-f", "--filtering", is_flag=True, help="Set a filtering or not")
 @click.option("-g", "--genre", required=True, help="Genre to filter")
 @click.option("-y", "--year", required=True, help="Year to filter")
-def main(input, filtering, genre, year):
+def main(insert, filtering, genre, year):
     """
     Start functions
     """
 
-    df = pd.read_csv(input)
+    df = pd.read_csv(insert)
 
     print(df.shape)
     print(df.info())
 
     if filtering:
         print("Im going to filter")
-        df = Filter_data(df).filter_genre(genre)
-        df = Filter_data(df).filter_year(year)
-        df = Filter_data(df).filter_higher_mean()
+        df = Filterdata(df).filter_genre(genre)
+        df = Filterdata(df).filter_year(year)
+        df = Filterdata(df).filter_higher_mean()
         print(df.shape)
         print(df.head())
 
