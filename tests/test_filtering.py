@@ -1,13 +1,8 @@
 import unittest
 import pandas as pd
-import click
 from scripts.homework_c4 import (filter_genre,filter_year,filter_higher_mean)
 
 df = pd.read_csv("FilmGenreStats.csv")
-
-@click.command(short_help="parser to import dataset")
-@click.option("-g", "--genre", required=True, help="Genre to filter")
-@click.option("-y", "--year", required=True, help="Year to filter")
 
 class TestFilteringFunctions(unittest.TestCase):
     def setUp(self):
