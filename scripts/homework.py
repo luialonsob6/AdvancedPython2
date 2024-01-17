@@ -16,24 +16,22 @@ def filter_genre(genre):
     """
     filter by genre
     """
-    df = df[df["Genre"] == genre]
-    return df
+    return df[df["Genre"] == genre]
 
 
 def filter_year(year):
     """
     Filter by year
     """
-    df = df[df["Year"] == year]
-    return df 
+    return df[df["Year"] == year]
 
 def filter_higher_mean():
     """
     Filter by higher revenue than mean
     """
     mean = df["Gross"].mean()
-    df = df[df["Gross"] > mean]
-    return df
+    
+    return df[df["Gross"] > mean]
 
 
 print(df.head())
