@@ -3,7 +3,7 @@ Testing the functions
 """
 import unittest
 import pandas as pd
-from scripts.homework import Filter_data
+from ..scripts.homework import Filter_data
 
 
 class TestFilterData(unittest.TestCase):
